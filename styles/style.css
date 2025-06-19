@@ -11,6 +11,232 @@
 */
 
 .page {
-  min-inline-size: 320px;
+  padding-inline: clamp(0rem, -8.1866rem + 34.9296vw, 23.25rem);
+  padding-block: 6.25rem;
+  font-family: var(--Inter, sans-serif);
+  font-size: var(--main-font-size, 18px);
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  background-image: var(--background-image),
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-inline-size: 20rem;
   min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--main-text-weight, 400);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-block-end: 6.25rem;
+  border: 2px solid black;
+  padding-inline: clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  font-family: var(--PressStart2P, sans-serif);
+  text-transform: uppercase;
+  background-color: var(--backgound-color, #fff);
+}
+
+.header-width {
+  min-inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+}
+
+.header__logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+}
+
+.card {
+  border: 2px solid black;
+  background-color: var(--backgound-color, #fff);
+}
+
+.card-width {
+  min-inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+}
+
+.card__title {
+  padding-inline: 10px 3px;
+  padding-block: 4px 6px;
+  font-size: var(--main-font-size, 18px);
+  text-align: left;
+  font-variation-settings: "wght" var(--main-header-weight, 700);
+}
+
+.card__image {
+  position: relative;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.image__filter-brightness {
+  filter: brightness(20%);
+}
+
+.image__filter-contrast {
+  filter: contrast(2);
+}
+
+.image__filter-blur {
+  filter: blur(5px);
+}
+
+.image__filter-opacity {
+  filter: opacity(0.3);
+}
+
+.image__filter-grayscale {
+  filter: grayscale(1);
+}
+
+.image__filter-invert {
+  filter: invert(1);
+}
+
+.image__filter-sepia {
+  filter: sepia(1);
+}
+
+.image__filter-many {
+  filter: invert(1) sepia(1) saturate(250%);
+}
+
+.image-watermark {
+  position: absolute;
+  top: 23px;
+  right: 11px;
+  opacity: 0.5;
+  color: #000;
+  font-family: var(--PressStart2P, sans-serif);
+  font-size: 14px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  mix-blend-mode: hard-light;
+}
+
+.card__information-text {
+  padding-inline: 25px;
+  padding-block: 23px 3px;
+  line-height: 1.167;
+  text-align: left;
+}
+
+.button-decoration {
+  border: 2px solid black;
+  color: #000;
+  font-family: var(--PressStart2P, sans-serif);
+  font-size: 14px;
+  line-height: 0.9;
+}
+
+.card__button-container {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  padding-inline-end: 25px;
+  padding-block: 23px;
+}
+
+.card__like-button {
+  padding-inline: 15px;
+  min-inline-size: 96px;
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 20px;
+  padding-block: 15px;
+}
+
+.save-button__image {
+  width: 28px;
+  height: 28px;
+}
+
+.save__window[open] {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.save-button__image {
+  grid-column: 1;
+  grid-row: 1;
+  margin-inline: 20px;
+}
+
+.save__window-message {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--PressStart2P, sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.save__window-button {
+  grid-column: span 2;
+  grid-row-start: 2;
+}
+
+.window-button {
+  padding-inline: clamp(7.15625rem, 6.7601rem + 1.6901vw, 8.28125rem);
+  padding-block: 12.5px;
+}
+
+.save__window::backdrop {
+  opacity: 0.7;
+  background-color: #111;
+}
+
+.page:has(dialog[open]) {
+  overflow: hidden;
 }
