@@ -13,11 +13,10 @@
 @keyframes scale {
   from {
     transform: scale(1);
-
   }
 
   to {
-    transform:scale(1.25);
+    transform: scale(1.25);
   }
 }
 
@@ -53,11 +52,7 @@
       transparent 2px,
       transparent 4px
     ),
-    linear-gradient(
-      to bottom,
-      #e7e7e7 0.01%,
-      #1a1a1a 100%
-    );
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -116,9 +111,9 @@
 }
 
 .card__image {
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
   position: relative;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 .image-block {
@@ -218,32 +213,32 @@
 .save-button {
   display: flex;
   flex-direction: column;
-  align-items: center; 
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   padding-inline: 20px;
   padding-block: 15px;
 }
 
 .save-button__image {
-  width: 28px;
-  height: 28px;
+  z-index: 1;
   grid-column: 1;
   grid-row: 1;
+  width: 28px;
+  height: 28px;
   margin-inline: 20px;
-  z-index: 1;
+  color: white;
   mix-blend-mode: difference;
-  color:white;
 }
 
 .save__window[open] {
-  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
-  border: 2px solid black;
   display: grid;
   grid-template-columns: 1fr 4fr;
   justify-items: center;
   align-items: center;
   row-gap: 20px;
+  border: 2px solid black;
+  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
 }
 
 .save__window-message {
@@ -258,7 +253,7 @@
 
 .save__window-button {
   grid-column: span 2;
-  grid-row-start: 2; 
+  grid-row-start: 2;
 }
 
 .window-button {
@@ -285,9 +280,9 @@
   position: absolute;
   inset: 0;
   background-color: black;
+  transition: 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
-  transition: 0.5s ease-in-out;
 }
 
 .button-decoration:hover::after {
@@ -296,9 +291,9 @@
 
 .button__text {
   position: relative;
-  color:white;
-  mix-blend-mode: difference;
   z-index: 1;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .card__icon-button:focus {
@@ -315,52 +310,52 @@
 }
 
 .like-icon:hover .core {
-  transition: 0.3s ease;
   fill: var(--contour-color, black);
+  transition: 0.3s ease;
 }
 
 .like-icon:hover .main-body {
-  transition: 0.3s ease 0.05s;
   fill: var(--contour-color, black);
+  transition: 0.3s ease 0.05s;
 }
 
 .like-icon:active .core {
-  transition: 0.3s ease;
   fill: var(--body-color, red);
+  transition: 0.3s ease;
 }
 
 .like-icon:active .main-body {
-  transition: 0.3s ease 0.05s;
   fill: var(--body-color, red);
+  transition: 0.3s ease 0.05s;
 }
 
 .like-icon:not(:hover):not(:active) .core {
+  fill: transparent;
   transition-delay: 0.03s;
-  fill:transparent;
 }
 
 .like-icon:not(:hover):not(:active) .main-body {
-  transition: 0.3s;
   fill: transparent;
+  transition: 0.3s;
 }
 
 .like-icon.is-liked .contour {
-  transition: 0.3s ease 0.06s;
   fill: var(--body-color, red);
+  transition: 0.3s ease 0.06s;
 }
 
 .like-icon.is-liked .core {
-  transition: 0.3s ease;
   fill: var(--body-color, red);
+  transition: 0.3s ease;
 }
 
 .like-icon.is-liked .main-body {
-  transition: 0.3s ease 0.05s;
   fill: var(--body-color, red);
+  transition: 0.3s ease 0.05s;
 }
 
 .like-icon.is-liked:not(:hover):not(:active) .core {
- fill: var(--body-color, red);
+  fill: var(--body-color, red);
 }
 
 .like-icon.is-liked:not(:hover):not(:active) .main-body {
@@ -368,8 +363,8 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: scale 0.3s ease-in 0.1s;
   transform-origin: center;
+  animation: scale 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
