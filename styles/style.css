@@ -12,7 +12,7 @@
 
 .page {
   padding-inline: clamp(0rem, -8.1866rem + 34.9296vw, 23.25rem);
-  padding-block: 6.25rem;
+  padding-block: 6.25rem 6.375rem;
   font-family: var(--Inter, sans-serif);
   font-size: var(--main-font-size, 18px);
   font-style: normal;
@@ -74,7 +74,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 3.125rem;
+  gap: 3.14rem;
 }
 
 .card {
@@ -88,22 +88,30 @@
 
 .card__title {
   padding-inline: 10px 3px;
-  padding-block: 4px 6px;
+  padding-block: 4px 4px;
   font-size: var(--main-font-size, 18px);
   text-align: left;
   font-variation-settings: "wght" var(--main-header-weight, 700);
 }
 
 .card__image {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
   position: relative;
+}
+
+.image-block {
+  display: block;
+  block-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  inline-size: 100%;
 }
 
 .image {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
 }
 
 .image__filter-brightness {
@@ -153,7 +161,7 @@
 
 .card__information-text {
   padding-inline: 25px;
-  padding-block: 23px 3px;
+  padding-block: 26px 0;
   line-height: 1.167;
   text-align: left;
 }
@@ -171,12 +179,13 @@
   justify-content: end;
   gap: 5px;
   padding-inline-end: 25px;
-  padding-block: 23px;
+  padding-block: 25px 23px;
 }
 
 .card__like-button {
   padding-inline: 15px;
   min-inline-size: 96px;
+  margin-bottom:2px;
 }
 
 .save {
@@ -199,6 +208,8 @@
 }
 
 .save__window[open] {
+  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+  border: 2px solid black;
   display: grid;
   grid-template-columns: 1fr 4fr;
   justify-items: center;
