@@ -170,9 +170,16 @@
   color: #000;
   font-family: var(--PressStart2P, sans-serif);
   font-size: 14px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #fff;
+  text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff;
   mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px #fff) {
+  .image-watermark {
+    text-shadow: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+  }
 }
 
 .card__information-text {
