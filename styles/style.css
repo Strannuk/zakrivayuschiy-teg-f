@@ -167,11 +167,13 @@
 }
 
 .button-decoration {
+  position: relative;
   border: 2px solid black;
   color: #000;
   font-family: var(--PressStart2P, sans-serif);
   font-size: 14px;
   line-height: 0.9;
+  background-color: #fff;
 }
 
 .card__button-container {
@@ -196,7 +198,8 @@
 .save-button {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
+  justify-content: center;
   gap: 0.5rem;
   padding-inline: 20px;
   padding-block: 15px;
@@ -205,6 +208,12 @@
 .save-button__image {
   width: 28px;
   height: 28px;
+  grid-column: 1;
+  grid-row: 1;
+  margin-inline: 20px;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color:white;
 }
 
 .save__window[open] {
@@ -217,11 +226,6 @@
   row-gap: 20px;
 }
 
-.save-button__image {
-  grid-column: 1;
-  grid-row: 1;
-  margin-inline: 20px;
-}
 
 .save__window-message {
   grid-column: 2;
@@ -235,7 +239,7 @@
 
 .save__window-button {
   grid-column: span 2;
-  grid-row-start: 2;
+  grid-row-start: 2; 
 }
 
 .window-button {
@@ -250,4 +254,43 @@
 
 .page:has(dialog[open]) {
   overflow: hidden;
+}
+
+.button-decoration:focus-visible {
+  box-shadow: 2px 2px 0 black;
+  transition: 0.3s ease;
+}
+
+.button-decoration::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s ease-in-out;
+}
+
+.button-decoration:hover::after {
+  transform: scaleX(1);
+}
+
+.button__text {
+  position: relative;
+  color:white;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.card__icon-button {
+  
+}
+
+.card__icon-button:focus {
+  border: 2px solid transparent;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid black;
+ 
 }
