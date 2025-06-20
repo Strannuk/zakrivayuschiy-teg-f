@@ -523,8 +523,12 @@
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <p class="save__window-message">Вставьте дискету, чтобы продолжить</p>
-        <form class="save__window-button" method="dialog">
-          <button class="window-button button-decoration">
+        <form class="save__window-button">
+          <button
+            class="window-button button-decoration"
+            type="button"
+            onclick="window.save__window.close()"
+          >
             <span class="button__text">ок</span>
           </button>
         </form>
