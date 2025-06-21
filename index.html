@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
-
   <body class="page">
     <header class="header header-width">
       <a class="header__logo">&lt;/html&gt;</a>
@@ -506,7 +505,7 @@
           </button>
         </div>
       </section>
-      <section class="save">
+      <div class="save">
         <button
           class="save-button button-decoration"
           type="button"
@@ -517,19 +516,21 @@
           </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
-      </section>
-      <dialog class="save__window" id="save__window">
-        <svg class="save-button__image">
-          <use href="./svg/floppy.svg#floppy"></use>
-        </svg>
-        <p class="save__window-message">Вставьте дискету, чтобы продолжить</p>
-          <button 
-            class="window-button button-decoration save__window-button"
-            type="button"
-            onclick="window.save__window.close()"
-          >
-            <span class="button__text">ок</span>
-          </button>
+      </div>
+      <dialog class="save-window" id="save__window">
+        <div class="save-window__content">
+          <svg class="save-window__content-image">
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <p class="save-window__content-message">Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <button
+          class="save-window__button button-decoration"
+          type="button"
+          onclick="window.save__window.close()"
+        >
+          <span class="button__text">ок</span>
+        </button>
       </dialog>
     </main>
     <script src="./scripts/like.js"></script>
