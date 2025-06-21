@@ -1,6 +1,6 @@
 :root {
-  --Inter: "Inter-Variable";
-  --PressStart2P: "PressStart2P Regular";
+  --Inter: "Inter-Variable", sans-serif;
+  --PressStart2P: "PressStart2P", fantasy;
   --main-text-weight: 400;
   --main-header-weight: 700;
   --main-font-size: 18px;

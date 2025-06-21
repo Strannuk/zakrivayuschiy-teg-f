@@ -40,12 +40,16 @@
 
 .like-icon:not(:hover):not(:active) .core {
   fill: transparent;
-  transition-delay: 0.03s;
+  transition: 0.3s ease 0.03s;
 }
 
 .like-icon:not(:hover):not(:active) .main-body {
   fill: transparent;
   transition: 0.3s;
+}
+
+.like-icon .contour {
+  transition: 0.1 linear;
 }
 
 .like-icon.is-liked .contour {

@@ -1,11 +1,15 @@
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-inline: clamp(0rem, -8.1866rem + 34.9296vw, 23.25rem);
   padding-block: 6.25rem 6.375rem;
-  font-family: var(--Inter, sans-serif);
+  font-family: var(--Inter);
   font-size: var(--main-font-size, 1em);
   font-style: normal;
   line-height: normal;
   text-align: center;
+  background-color: var(--background-color, #fff);
   background-image: var(--background-image),
     repeating-linear-gradient(
       90deg,
@@ -25,7 +29,6 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: var(--background-color, #fff);
   min-inline-size: 20rem;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--main-text-weight, 400);
@@ -43,13 +46,13 @@
   border: 2px solid black;
   padding-inline: clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
   padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  font-family: var(--PressStart2P, sans-serif);
+  font-family: var(--PressStart2P);
   text-transform: uppercase;
   background-color: var(--background-color, #fff);
 }
 
 .header-width {
-  min-inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+  inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
 }
 
 .header__logo {
@@ -72,7 +75,7 @@
 }
 
 .card-width {
-  min-inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+  inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
 }
 
 .card__title {
@@ -141,7 +144,7 @@
   right: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
   opacity: 0.5;
   color: #000;
-  font-family: var(--PressStart2P, sans-serif);
+  font-family: var(--PressStart2P);
   font-size: var(--text-font-size, 0.78rem);
   text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff;
   mix-blend-mode: hard-light;
@@ -171,13 +174,17 @@
   padding-block: 1.5625rem 1.4375rem;
 }
 
+.card__icon-button {
+  display: flex;
+  transition: 0.3s ease;
+}
+
 .card__icon-button:focus {
   border: 2px solid transparent;
 }
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--decoration-color, #111);
-  transition: 0.3s ease;
 }
 
 .card__like-button {
@@ -189,15 +196,15 @@
   position: relative;
   border: 2px solid black;
   color: #000;
-  font-family: var(--PressStart2P, sans-serif);
+  font-family: var(--PressStart2P);
   font-size: var(--text-font-size, 0.78rem);
   line-height: 0.9;
   background-color: var(--background-color, #fff);
+  transition: 0.3s ease;
 }
 
 .button-decoration:focus-visible {
   box-shadow: 2px 2px 0 var(--decoration-color, #111);
-  transition: 0.3s ease;
 }
 
 .button-decoration::after {
@@ -246,34 +253,39 @@
 }
 
 .save-window[open] {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-inline: clamp(0.9375rem, -10.6602rem + 49.4836vw, 33.875rem);
-  margin-block: clamp(14.75rem, 11.515rem + 13.8028vw, 23.9375rem);
+  position: fixed;
+  top: 50%;
+  left: 50%;
   border: 2px solid black;
+  padding-inline: 2.3rem;
+  padding-block: 1.875rem;
+  transform: translate(-50%, -50%);
+  inline-size: clamp(21.5625rem, 21.2104rem + 1.5023vw, 22.5625rem);
+  block-size: clamp(12.4375rem, 12.4815rem + -0.1878vw, 12.3125rem);
 }
 
 .save-window::backdrop {
-  opacity: 0.7;
+  opacity: 0.75;
   background-color: var(--decoration-color, #111);
 }
 
 .save-window__content {
-  display: flex;
+  display: grid;
+  grid-template-columns: fit-content, 1fr;
   align-items: center;
   gap: 1.25rem;
-  padding-inline: 2.5rem;
-  padding-block-start: 1.875rem;
+  padding-block-end: 1.875rem;
 }
 
 .save-window__content-image {
-  width: 12rem;
-  height: 2.4375rem;
+  grid-column: 1;
+  block-size: 2.4375rem;
+  inline-size: 2.4375rem;
 }
 
 .save-window__content-message {
-  font-family: var(--PressStart2P, sans-serif);
+  grid-column: 2;
+  font-family: var(--PressStart2P);
   font-size: var(--text-font-size, 0.78rem);
   line-height: 1.5;
   text-align: start;
@@ -281,21 +293,24 @@
 }
 
 .save-window__button {
-  margin-inline: 2.5rem;
-  margin-block-end: 1.875rem;
-  padding-block: 0.625rem;
+  padding-inline: clamp(7.125rem, 6.7289rem + 1.6901vw, 8.25rem);
+  padding-block: 0.78125rem;
 }
 
 @media (width <=375px) {
+  .page {
+    display: block;
+  }
+
   .save-button {
     flex-direction: column;
     padding-inline: 1.25rem;
   }
 
   .save-button__image {
-    margin-inline-start: 0;
     width: 28px;
     height: 28px;
+    margin-inline-start: 0;
   }
 
   .header__logo {
@@ -303,27 +318,19 @@
   }
 
   .header-width {
-    min-inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
+    inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
   }
 
   .card-width {
-    min-inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
+    inline-size: clamp(20rem, 0rem + 100vw, 23.4375rem);
   }
 
   .save-window[open] {
-    min-inline-size: clamp(20rem, 0rem + 100vw, 21.5rem);
+    padding-block: clamp(1.875rem, 5.8023rem + -19.6364vw, 1.2rem);
+    inline-size: clamp(20rem, 0rem + 100vw, 21.5rem);
+  }
+
+  .save-window__button {
+    padding-inline: clamp(5.375rem, -4.8068rem + 50.9091vw, 7.125rem);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
